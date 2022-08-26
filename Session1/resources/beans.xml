@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean id="obj" class="com.demo.HelloWorld"></bean>
+	
+	<!-- Student object creation -->
+	<bean id="s1" class="com.demo.Student">
+		<property name="id" value="101"></property>
+		<property name="name" value="Student1"></property>
+		<property name="marks" ref="m1"></property>
+	</bean>
+	
+	<!-- Marks object creation -->
+	<!-- injected the dependecy with the help of setter method -->
+	<bean id="m1" class="com.demo.Marks">
+		<property name="physics" value="89"></property>
+		<property name="chemistry" value="72"></property>
+		<property name="maths" value="91"></property>
+	</bean>
+</beans>
